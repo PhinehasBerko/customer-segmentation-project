@@ -15,6 +15,7 @@ __pycache__/
 *.pyc
 
 # Data (ignore big files, keep small samples if needed)
+*.csv
 data/*.csv
 data/*.xlsx
 data/*.db
