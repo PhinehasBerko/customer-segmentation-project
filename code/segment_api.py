@@ -4,10 +4,17 @@ import pandas as pd
 
 import joblib
 
+import os # Import the os module to use os.path.join
 
-kmeans = joblib.load("k_means_0.1.0.pkl")
+# Get the directory where the script is running
+script_dir = os.path.dirname(__file__)
 
-scaler = joblib.load("scaler_1.0.0.pkl")
+# Construct the full path to the models directory
+models_dir = os.path.join(script_dir, '../models')
+
+# Load the models using the correct relative paths
+kmeans = joblib.load(os.path.join(models_dir, 'k_means_0.1.0.pkl'))
+scaler = joblib.load(os.path.join(models_dir, 'scaler_1.0.0.pkl'))
 
 st.title("Customer Segmentation App")
 st.write("Enter customer details to predict segment ")
